@@ -22,7 +22,7 @@ Urban Wheels is a modern, responsive web application designed to provide a seaml
 
 ## 🌐 Live Demo
 
-👉 [View Live Project](https://your-live-link.com)
+👉 [View Live Project](https://github.com/fahad1084/urban-wheels)
 
 ---
 
@@ -38,11 +38,4 @@ Fahad Noor – Frontend Developer & Designer
 Muhammad Bilal – UI Engineer & Flutter Developer
 
 ## 📄 License
-© 2023 FahadNoor & Bilal. All Rights Reserved.
-
-## 📫 Contact
-For inquiries, contact us at:
-
-✉️ Email: accessoryemail785@gmail.com
-
-📞 Phone: 0322-0576657
+© 2025 Fahad Noor & Bilal. All Rights Reserved.
