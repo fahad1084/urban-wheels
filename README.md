@@ -1,111 +1,33 @@
-🚗 Urban Wheels – Car Rental Platform
-Urban Wheels is a modern, responsive car rental web application designed for city-wide use in Pakistan. Built using HTML, CSS, and JavaScript, the platform allows users to browse, filter, and rent cars easily with a sleek, mobile-friendly interface.
+# Urban Wheels - Car Rental Platform
 
-🌟 Key Features
-Fully Responsive UI for mobile, tablet, and desktop.
+## Overview
+Urban Wheels is a modern, responsive web application designed to provide a seamless car rental experience for users in Pakistan, operating in cities such as Islamabad, Lahore, Multan, and Karachi. The platform offers a diverse fleet of vehicles, user-friendly search and rental functionalities, secure authentication, feedback collection, and detailed service and legal information. Built with HTML, CSS, and JavaScript, Urban Wheels emphasizes accessibility, interactivity, and aesthetic appeal through dynamic animations, responsive design, and a consistent user interface.
 
-Car Listing & Filtering by brand, model year, and monthly payment.
+## Features
 
-Role-Based Login & Registration (Admin/User).
+- **Responsive Design:** Optimized for mobile, tablet, and desktop devices, ensuring accessibility across various screen sizes.
+- **Interactive Navigation:** Toggleable navbar for mobile devices with smooth scrolling and dynamic header shadow on scroll.
+- **Car Search and Rental:** Filter cars by brand, model, monthly payment, and make year with a streamlined rental form.
+- **Featured Cars Section:** Displays vehicles with price, fuel type, mileage, and transmission, enhanced with hover effects and animations.
+- **User Authentication:** Login and registration forms with role selection (Admin/User) for secure, personalized access.
+- **About Us Page:** Company’s mission, vision, and achievements with expandable card interactions.
+- **Contact Us Form:** Inquiry form alongside contact details.
+- **Customer Reviews:** Showcases testimonials with star ratings.
+- **Feedback Form:** Allows users to rate services and provide suggestions.
+- **Rentee Details Form:** Collects personal info for rental agreements with declaration checkbox.
+- **Services Page:** Details long-term leasing, vehicle renovation, and insurance options.
+- **Terms & Conditions Page:** Interactive tabbed legal terms with progress bar navigation.
+- **Modern Styling:** CSS custom properties, gradients, animations for polished UI.
+- **Accessibility:** Icons, clear typography, hover effects, with scope for further enhancements.
 
-Expandable "About Us" Section with mission, vision, and achievements.
+## Live Demo
 
-Contact & Feedback Forms to engage with users.
+👉 [View Live Project](https://your-live-link.com)
 
-Customer Review Section with star ratings and testimonials.
+---
 
-Services Page outlining leasing, insurance, and vehicle care.
+## How to Run Locally
 
-Terms & Conditions Wizard with tabbed navigation and progress tracker.
-
-CSS Animations and gradient themes for a modern aesthetic.
-
-🧑‍💻 Technologies Used
-HTML5
-
-CSS3 (Flexbox, Grid, Animations)
-
-Vanilla JavaScript
-
-Ionicons for icons
-
-Google Fonts – primarily Poppins
-
-🗺️ Page Overview
-🏠 Home Page
-Hero banner with call-to-action
-
-Featured car listings with filtering
-
-Navigation bar and footer with links
-
-🔐 Login / 📝 Register
-Login and register forms with input validation
-
-User role selection (Admin/User)
-
-“Remember me” and “Forgot password” options
-
-🏢 About Us
-Expandable cards for company mission, vision, and success highlights
-
-📞 Contact
-Contact form for user inquiries
-
-Static contact details (phone, email, address)
-
-⭐ Customer Reviews
-Star-rated testimonials with user feedback
-
-📋 Feedback
-Sliders and comment box for service quality input
-
-👤 Rentee Details
-Personal and ID form for car rental confirmation
-
-🔧 Services
-Information on:
-
-Long-term leasing
-
-Vehicle renovations
-
-Insurance services
-
-📄 Terms & Conditions
-Tabbed interface with progress steps
-
-Includes legal use, policies, and termination rules
-
-🎨 Design Highlights
-Color Scheme: Cool blues, olive greens, amber tones
-
-Typography: Mostly Poppins (with some inconsistent fonts like Nunito/Open Sans)
-
-Animations:
-
-Section fade-ins
-
-Button hover effects
-
-Gradient transitions
-
-Wizard progress bar for tabs
-
-⚙️ JavaScript Functionality
-Toggleable mobile navbar
-
-Sticky header with scroll shadow
-
-Expand/collapse info cards
-
-Tab navigation for multi-step forms
-
-Wizard-style progress for T&C section
-
-Show/hide password toggle
-
-Interactive dropdowns and ratings
-
-📄 License
-© 2023 Fahad Noor & Bilal. All rights reserved.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/urban-wheels.git
