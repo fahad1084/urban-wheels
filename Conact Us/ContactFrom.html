@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="https://unpkg.com/ionicons@5.5.2/dist/css/ionicons.min.css">
+  <link rel="stylesheet" href="Contact Form.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="left-column">
+      <h1>Contact Us</h1>
+      <div class="contact-info">
+        <div class="box">
+          <i class="ion-icon ion-map-outline"></i>
+          <div class="text">
+            <h3>Address</h3>
+            <p>61200, Kashmir Highway, G-9, Islamabad, Pakistan.</p>
+          </div>
+        </div>
+        <div class="box">
+          <i class="ion-icon ion-call-outline"></i>
+          <div class="text">
+            <h3>Phone</h3>
+            <p>0322-0576657<br>0310-6443878</p>
+          </div>
+        </div>
+        <div class="box">
+          <i class="ion-icon ion-at-outline"></i>
+          <div class="text">
+            <h3>Email</h3>
+            <p>urbanwheels.official@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right-column">
+      <h1>Send Message</h1>
+      <div class="input-box">
+        <input type="text" id="contactName" placeholder="Full Name" required>
+        <i class="ion-icon ion-person-outline"></i>
+      </div>
+      <div class="input-box">
+        <input type="email" id="contactEmail" placeholder="Email" required>
+        <i class="ion-icon ion-at-outline"></i>
+      </div>
+      <div class="input-box">
+        <textarea id="contactMessage" placeholder="Type your Message..." required></textarea>
+        <i class="ion-icon ion-chatbox-outline"></i>
+      </div>
+      <button class="btn" onclick="submitContact()">Submit</button>
+      <a href="../Urban Wheels/Urban Wheels.html" class="link">Back to Dashboard</a> <!-- Updated text and target -->
+      <div id="contactError" class="error"></div>
+    </div>
+  </div>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    function submitContact() {
+      const name = document.getElementById('contactName').value;
+      const email = document.getElementById('contactEmail').value;
+      const message = document.getElementById('contactMessage').value;
+      const errorDiv = document.getElementById('contactError');
+
+      if (!name || !email || !message) {
+        errorDiv.textContent = 'Please fill all fields.';
+        return;
+      }
+
+      const contactData = { name, email, message, timestamp: new Date().toISOString() };
+      let contacts = JSON.parse(localStorage.getItem('contacts')) || [];
+      contacts.push(contactData);
+      localStorage.setItem('contacts', JSON.stringify(contacts));
+
+      errorDiv.textContent = 'Message submitted successfully!';
+      errorDiv.style.color = '#ff6f61';
+
+      document.getElementById('contactName').value = '';
+      document.getElementById('contactEmail').value = '';
+      document.getElementById('contactMessage').value = '';
+    }
+  </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'948f7fd959e0d059',t:'MTc0ODc4OTE3NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

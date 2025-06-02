@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="Our Services.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Our Services</h1>
+        <div class="cards">
+            <div class="card">
+                <i class="fas fa-car"></i>
+                <h3>Long Term Lease</h3>
+                <hr>
+                <p>Flexible leasing options for extended periods, perfect for businesses or individuals needing reliable transportation without the commitment of ownership.</p>
+                <div class="extra-content" style="display: none;">
+                    <p>Our long-term lease plans offer customizable durations from 6 months to 3 years, with competitive rates and full maintenance support. Choose from our diverse fleet, including fuel-efficient sedans, SUVs, and luxury vehicles, tailored to your lifestyle or business needs.</p>
+                </div>
+                <a href="#" class="link read-more">Read More</a>
+            </div>
+            <div class="card">
+                <i class="fas fa-tools"></i>
+                <h3>Renovation</h3>
+                <hr>
+                <p>Professional vehicle renovation services to restore or upgrade your rental car, ensuring it meets your style and performance preferences.</p>
+                <div class="extra-content" style="display: none;">
+                    <p>Our renovation services include interior reupholstering, exterior repainting, and performance upgrades. Whether you want a custom look or enhanced functionality, our expert team ensures your vehicle is transformed with precision and quality craftsmanship.</p>
+                </div>
+                <a href="#" class="link read-more">Read More</a>
+            </div>
+            <div class="card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Insurance Options</h3>
+                <hr>
+                <p>Comprehensive insurance plans to protect you and your rental vehicle, offering peace of mind for every journey.</p>
+                <div class="extra-content" style="display: none;">
+                    <p>We offer a range of insurance packages, including collision damage waivers, liability coverage, and theft protection. Our plans are designed to be flexible, allowing you to choose the coverage that best suits your needs while keeping costs affordable.</p>
+                </div>
+                <a href="#" class="link read-more">Read More</a>
+            </div>
+        </div>
+        <a href="../Urban Wheels/Urban Wheels.html" class="dashboard-link">Back to Dashboard</a>
+    </div>
+    <script>
+        document.querySelectorAll('.read-more').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const card = button.closest('.card');
+                const extraContent = card.querySelector('.extra-content');
+                const isExpanded = extraContent.style.display === 'block';
+                
+                // Collapse all other cards
+                document.querySelectorAll('.extra-content').forEach(content => {
+                    content.style.display = 'none';
+                });
+                document.querySelectorAll('.read-more').forEach(btn => {
+                    btn.textContent = 'Read More';
+                });
+
+                // Toggle current card
+                extraContent.style.display = isExpanded ? 'none' : 'block';
+                button.textContent = isExpanded ? 'Read More' : 'Read Less';
+            });
+        });
+    </script>
+</body>
+</html>

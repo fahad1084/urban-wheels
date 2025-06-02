@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="https://unpkg.com/ionicons@5.5.2/dist/css/ionicons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="CSS File.css">
+</head>
+<body>
+<div class="register-container">
+        <div class="car-background">
+            <img src="login2.png" alt="Car Image" class="car-image">
+        </div>
+        <div class="wrapper">
+            <h1>Register</h1>
+            <form>
+                <div class="input-box">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="input-box">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="input-box">
+                    <i class="fas fa-phone"></i>
+                    <input type="tel" placeholder="Phone Number" required>
+                </div>
+                <div class="input-box">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="input-box">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Confirm Password" required>
+                </div>
+                <div class="input-box">
+                    <select required>
+                        <option value="" disabled selected>Select Role</option>
+                        <option value="admin">Admin</option>
+                        <option value="user">User</option>
+                    </select>
+                </div>
+                <label>
+      <input type="checkbox" id="regAgree" required> I agree to the terms.
+    </label>
+    <button class="btn" onclick="register()">Register</button>
+    <p>Already have an account? <span class="link" onclick="showLogin()">Login</span></p>
+    <div id="registerError" class="error"></div>
+            </form>
+        </div>
+    </div>
+  </div>
+
+  <script>
+    function register() {
+      const fullName = document.getElementById('regFullName').value;
+      const email = document.getElementById('regEmail').value;
+      const phone = document.getElementById('regPhone').value;
+      const username = document.getElementById('regUsername').value;
+      const password = document.getElementById('regPassword').value;
+      const confirmPassword = document.getElementById('regConfirmPassword').value;
+      const role = document.getElementById('regRole').value;
+      const agree = document.getElementById('regAgree').checked;
+      const errorDiv = document.getElementById('registerError');
+
+      if (!fullName || !email || !phone || !username || !password || !confirmPassword || !role || !agree) {
+        errorDiv.textContent = 'Please fill all fields and agree to terms.';
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        errorDiv.textContent = 'Passwords do not match.';
+        return;
+      }
+
+      let users = JSON.parse(localStorage.getItem('users')) || [];
+      if (users.find(u => u.username === username)) {
+        errorDiv.textContent = 'Username already exists.';
+        return;
+      }
+
+      users.push({ fullName, email, phone, username, password, role });
+      localStorage.setItem('users', JSON.stringify(users));
+      localStorage.setItem('role', role);
+      window.location.href = role === 'admin' ? 'admin.html' : 'user.html';
+      errorDiv.textContent = '';
+    }
+
+    function showLogin() {
+      window.location.href = '../Login/Login Form.html';
+    }
+  </script>
+</body>
+</html>

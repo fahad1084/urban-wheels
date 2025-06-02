@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #006d77, #83c5be);
+    background-size: 200% 200%;
+    animation: gradientShift 12s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+.wrapper {
+    width: 1000px;
+    background: linear-gradient(145deg, rgba(41, 41, 41, 0.9), rgba(0, 109, 119, 0.7));
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    padding: 30px;
+    text-align: center;
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.wrapper h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.card {
+    width: 32%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgba(141, 141, 141, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card i {
+    font-size: 30px;
+    color: #83c5be;
+    margin-bottom: 15px;
+    transition: color 0.3s ease-in-out;
+    display: block;
+}
+
+.card:hover i {
+    color: #ffffff;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    transition: color 0.3s ease-in-out;
+}
+
+.card:hover h3 {
+    color: #ffffff;
+}
+
+.card hr {
+    width: 80px;
+    height: 2px;
+    background-color: #83c5be;
+    margin: 10px auto;
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.card:hover hr {
+    background-color: #ffffff;
+}
+
+.card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ffffff;
+    text-align: justify;
+    transition: color 0.3s ease-in-out;
+}
+
+.card:hover p {
+    color: #ffffff;
+}
+
+.card .extra-content {
+    margin-top: 15px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #e0e0e0;
+    text-align: justify;
+    transition: all 0.3s ease-in-out;
+}
+
+.wrapper .link.read-more {
+    display: inline-block;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    background: linear-gradient(45deg, #006d77, #83c5be);
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    animation: btnPulse 1.5s ease-in-out infinite;
+}
+
+.wrapper .link.read-more:hover {
+    transform: scale(1.05);
+    box-shadow: 0 7px 20px rgba(131, 197, 190, 0.6);
+    background: linear-gradient(45deg, #83c5be, #a8dadc);
+}
+
+.wrapper .dashboard-link {
+    display: inline-block;
+    width: 200px;
+    height: 45px;
+    line-height: 45px;
+    background: linear-gradient(45deg, #3c096c, #5a189a);
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    animation: btnPulse 1.5s ease-in-out infinite;
+}
+
+.wrapper .dashboard-link:hover {
+    transform: scale(1.05);
+    box-shadow: 0 7px 20px rgba(90, 24, 154, 0.6);
+    background: linear-gradient(45deg, #5a189a, #7b2cbf);
+}
+
+@keyframes btnPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #2c2c2c;
+    padding: 10px;
+    text-align: center;
+}
+
+footer p {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+@media (max-width: 991px) {
+    .wrapper {
+        width: 90%;
+    }
+    .cards {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .card {
+        width: 100%;
+    }
+}

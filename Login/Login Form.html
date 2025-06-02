@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="https://unpkg.com/ionicons@5.5.2/dist/css/ionicons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="Login Form.css">
+</head>
+<body>
+<div class="login-container">
+        <div class="car-background">
+            <img src="login1.png" alt="Car Image" class="car-image">
+        </div>
+        <div class="wrapper">
+            <h1>Login</h1>
+            <form>
+                <div class="input-box">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Username" required>
+                </div>
+                <div class="input-box">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="input-box">
+                    <select required>
+                        <option value="" disabled selected>Select Role</option>
+                        <option value="admin">Admin</option>
+                        <option value="user">User</option>
+                    </select>
+                </div>
+    <label>
+      <input type="checkbox" id="rememberMe"> Remember me
+    </label>
+    <button class="btn" onclick="login()">Login</button>
+    <p>Don't have an account? <span class="link" onclick="showRegister()">Register</span></p>
+    <div id="loginError" class="error"></div>
+  </div>
+
+  <script>
+    function login() {
+      const username = document.getElementById('loginUsername').value;
+      const password = document.getElementById('loginPassword').value;
+      const role = document.getElementById('loginRole').value;
+      const errorDiv = document.getElementById('loginError');
+
+      if (!username || !password || !role) {
+        errorDiv.textContent = 'Please fill all fields.';
+        return;
+      }
+
+      let users = JSON.parse(localStorage.getItem('users')) || [];
+      const user = users.find(u => u.username === username && u.password === password && u.role === role);
+
+      if (user) {
+        localStorage.setItem('role', role);
+        window.location.href = role === 'admin' ? 'admin.html' : 'user.html';
+        errorDiv.textContent = '';
+      } else {
+        errorDiv.textContent = 'Invalid credentials or role.';
+      }
+    }
+
+    function showRegister() {
+      window.location.href = '../Registration/Registration Form.html';
+    }
+  </script>
+</body>
+</html>

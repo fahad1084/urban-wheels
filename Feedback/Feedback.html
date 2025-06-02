@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Wheels - Feedback</title>
+    <link rel="stylesheet" href="Feedback.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Urban Wheels</h1>
+        <h3>Customer Feedback Form</h3>
+        <p>Dear Customer,</p>
+        <p>Thank you for choosing Urban Wheels. Your visit is a motivation for us. Kindly help us improve our services.</p>
+        <form>
+            <label>Your Name: <input type="text" name="name" required></label><br>
+            <label>Date: <input type="date" name="date" required max="2025-06-01"></label><br>
+            <label>Username: <input type="text" name="username" required></label><br>
+            <label>Email: <input type="email" name="email" required></label><br>
+
+            <h3>How satisfied are you with each of the following aspects of our services?</h3>
+            <p>Please rank by selecting one option that truly reflects your satisfaction level.</p>
+            <div class="service-section">
+                <div class="service-row">
+                    <span class="service-name">Rental Experience:</span>
+                    <div class="rating-options">
+                        <label><input type="radio" name="rental_experience" value="excellent"> Excellent</label>
+                        <label><input type="radio" name="rental_experience" value="good"> Good</label>
+                        <label><input type="radio" name="rental_experience" value="average"> Average</label>
+                        <label><input type="radio" name="rental_experience" value="poor"> Poor</label>
+                        <label><input type="radio" name="rental_experience" value="worst"> Worst</label>
+                    </div>
+                </div>
+                <div class="service-row">
+                    <span class="service-name">Vehicle Quality:</span>
+                    <div class="rating-options">
+                        <label><input type="radio" name="vehicle_quality" value="excellent"> Excellent</label>
+                        <label><input type="radio" name="vehicle_quality" value="good"> Good</label>
+                        <label><input type="radio" name="vehicle_quality" value="average"> Average</label>
+                        <label><input type="radio" name="vehicle_quality" value="poor"> Poor</label>
+                        <label><input type="radio" name="vehicle_quality" value="worst"> Worst</label>
+                    </div>
+                </div>
+                <div class="service-row">
+                    <span class="service-name">Fleet Options:</span>
+                    <div class="rating-options">
+                        <label><input type="radio" name="fleet_options" value="excellent"> Excellent</label>
+                        <label><input type="radio" name="fleet_options" value="good"> Good</label>
+                        <label><input type="radio" name="fleet_options" value="average"> Average</label>
+                        <label><input type="radio" name="fleet_options" value="poor"> Poor</label>
+                        <label><input type="radio" name="fleet_options" value="worst"> Worst</label>
+                    </div>
+                </div>
+                <div class="service-row">
+                    <span class="service-name">Insurance and Coverage:</span>
+                    <div class="rating-options">
+                        <label><input type="radio" name="insurance" value="excellent"> Excellent</label>
+                        <label><input type="radio" name="insurance" value="good"> Good</label>
+                        <label><input type="radio" name="insurance" value="average"> Average</label>
+                        <label><input type="radio" name="insurance" value="poor"> Poor</label>
+                        <label><input type="radio" name="insurance" value="worst"> Worst</label>
+                    </div>
+                </div>
+                <div class="service-row">
+                    <span class="service-name">Membership Programs:</span>
+                    <div class="rating-options">
+                        <label><input type="radio" name="membership" value="excellent"> Excellent</label>
+                        <label><input type="radio" name="membership" value="good"> Good</label>
+                        <label><input type="radio" name="membership" value="average"> Average</label>
+                        <label><input type="radio" name="membership" value="poor"> Poor</label>
+                        <label><input type="radio" name="membership" value="worst"> Worst</label>
+                    </div>
+                </div>
+                <div class="service-row">
+                    <span class="service-name">Billing and Pricing:</span>
+                    <div class="rating-options">
+                        <label><input type="radio" name="billing" value="excellent"> Excellent</label>
+                        <label><input type="radio" name="billing" value="good"> Good</label>
+                        <label><input type="radio" name="billing" value="average"> Average</label>
+                        <label><input type="radio" name="billing" value="poor"> Poor</label>
+                        <label><input type="radio" name="billing" value="worst"> Worst</label>
+                    </div>
+                </div>
+                <div class="service-row">
+                    <span class="service-name">Recommendation:</span>
+                    <div class="rating-options">
+                        <label><input type="radio" name="recommendation" value="excellent"> Excellent</label>
+                        <label><input type="radio" name="recommendation" value="good"> Good</label>
+                        <label><input type="radio" name="recommendation" value="average"> Average</label>
+                        <label><input type="radio" name="recommendation" value="poor"> Poor</label>
+                        <label><input type="radio" name="recommendation" value="worst"> Worst</label>
+                    </div>
+                </div>
+            </div>
+
+            <h3>General comments and suggestions for improving our services.</h3>
+            <textarea name="comments" placeholder="Type your comments here..." required></textarea>
+            <br>
+            <button type="submit">Submit</button>
+                        <br>
+            <a href="../Urban Wheels/Urban Wheels.html" class="link">Go Back to Dashboard</a>
+        </form>
+    </div>
+</body>
+</html>

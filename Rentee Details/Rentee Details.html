@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Wheels - Rentee Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="Rentee Details.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Urban Wheels</h1>
+        <h3>Rentee Details</h3>
+        <p>Please fill in your details below to proceed with the rental.</p>
+        <form id="renteeForm">
+            <div class="input-box">
+                <i class="fas fa-user"></i>
+                <input type="text" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-box">
+                <i class="fas fa-phone"></i>
+                <input type="tel" name="phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="input-box">
+                <i class="fas fa-home"></i>
+                <input type="text" name="address" placeholder="Enter your address" required>
+            </div>
+            <div class="input-box">
+                <i class="fas fa-calendar-alt"></i>
+                <input type="date" name="fromDate" id="fromDate" min="2025-06-01" required>
+            </div>
+            <div class="input-box">
+                <i class="fas fa-calendar-alt"></i>
+                <input type="date" name="toDate" id="toDate" required>
+            </div>
+            <label class="declaration">
+                <input type="checkbox" name="declaration" required>
+                I hereby declare that above information provided is correct.
+            </label>
+            <button type="submit" class="btn">Rent Now</button>
+            <a href="../Urban Wheels/Urban Wheels.html" class="link">Go Back to Dashboard</a>
+        </form>
+    </div>
+    <script>
+        const fromDateInput = document.getElementById('fromDate');
+        const toDateInput = document.getElementById('toDate');
+
+        fromDateInput.addEventListener('change', function() {
+            const fromDate = new Date(this.value);
+            toDateInput.min = this.value;
+        });
+
+        toDateInput.addEventListener('change', function() {
+            const toDate = new Date(this.value);
+            const fromDate = new Date(fromDateInput.value);
+            if (toDate < fromDate) {
+                alert('To Date cannot be earlier than From Date.');
+                this.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
