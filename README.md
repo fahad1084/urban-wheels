@@ -31,3 +31,18 @@ Urban Wheels is a modern, responsive web application designed to provide a seaml
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/your-username/urban-wheels.git
+
+## 👥 Contributors
+Fahad Noor – Frontend Developer & Designer
+
+Muhammad Bilal – UI Engineer & Flutter Developer
+
+## 📄 License
+© 2023 FahadNoor & Bilal. All Rights Reserved.
+
+## 📫 Contact
+For inquiries, contact us at:
+
+✉️ Email: accessoryemail785@gmail.com
+
+📞 Phone: 0322-0576657
