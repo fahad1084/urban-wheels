@@ -397,100 +397,94 @@ body {
   align-items: center;
   padding-top: clamp(100px, 15vh, 120px);
   z-index: 1;
+  background: url("../images/hero-banner.jpg") no-repeat center right;
+  background-size: cover;
+  background-color: var(--slate-blue); /* Fallback color */
 }
 
 .hero-content {
   max-width: clamp(300px, 50vw, 500px);
-  animation: slideInLeft 1s ease forwards;
+  text-align: center;
+  animation: fadeInUp 1s ease forwards;
 }
 
-@keyframes slideInLeft {
-  0% { opacity: 0; transform: translateX(-20px); }
-  100% { opacity: 1; transform: translateX(0); }
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 .hero-title {
-  max-width: 20ch;
+  max-width: 100%;
   margin-bottom: clamp(10px, 2vw, 15px);
-  font-size: var(--fs-1);
+  font-size: clamp(2rem, 5vw, 2.875rem);
+  text-transform: uppercase;
+  color: var(--light-gray);
 }
 
 .hero-text {
   color: var(--light-gray);
   font-size: var(--fs-5);
   line-height: 1.8;
-  margin-bottom: clamp(20px, 3vw, 30px);
-}
-
-.hero-text span {
-  color: var(--deep-cyan);
-  font-weight: var(--fw-600);
+  margin-bottom: clamp(30px, 5vw, 50px);
 }
 
 .hero-form {
-  background: var(--gradient-hero);
+  background: linear-gradient(90deg, hsl(180, 80%, 40%), hsl(25, 85%, 50%));
   border: 1.5px solid var(--steel-blue);
   box-shadow: var(--shadow-1);
   border-radius: var(--radius-18);
   font-family: var(--ff-nunito);
   max-width: clamp(300px, 80vw, 900px);
-  transition: var(--transition);
+  padding: clamp(10px, 2vw, 15px);
+  display: flex;
+  gap: clamp(10px, 2vw, 15px);
+  justify-content: space-between;
+  align-items: center;
 }
 
 .hero-form:hover { box-shadow: var(--shadow-2); }
 
 .input-wrapper {
-  padding: clamp(10px, 2vw, 15px) clamp(15px, 2.5vw, 20px);
-  position: relative;
+  flex: 1;
+  padding: 0;
 }
 
-.input-wrapper:not(:last-of-type) { border-bottom: 1.5px solid hsla(0, 0%, 100%, 0.1); }
-
-.input-label {
-  color: var(--dark-teal);
-  font-size: var(--fs-6);
-  margin-bottom: clamp(8px, 1.5vw, 10px);
-}
-
-.input-field {
+.input-wrapper input {
   color: var(--light-gray);
   outline: 2px solid transparent;
   outline-offset: 5px;
   border-radius: 4px;
   padding: clamp(8px, 1.5vw, 10px);
   background: var(--dark-slate);
+  width: 100%;
   transition: var(--transition);
 }
 
-.input-field:focus {
+.input-wrapper input:focus {
   outline-color: var(--steel-blue);
   box-shadow: 0 0 8px hsla(200, 50%, 50%, 0.5);
 }
 
-.input-field::placeholder { color: var(--dark-teal); }
+.input-wrapper input::placeholder {
+  color: var(--light-gray);
+  opacity: 0.7;
+}
 
-.hero-form .btn {
-  --width: calc(100% - clamp(30px, 5vw, 40px));
-  --height: clamp(45px, 6vh, 50px);
-  margin: clamp(15px, 3vw, 20px);
+.search-btn {
+  --background: hwb(180 8% 28%);
+  --color: var(--white);
+  --width: clamp(80px, 15vw, 100px);
+  --height: clamp(40px, 6vh, 50px);
   text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  font-weight: var(--fw-600);
+}
+
+.search-btn:hover {
+  --background: hsl(180, 80%, 50%);
 }
 
 .hero-banner {
-  display: none;
-  background: url("../images/hero-banner.jpg") no-repeat;
-  background-size: cover;
-  background-position: left;
-  position: absolute;
-  top: clamp(80px, 12vh, 100px);
-  bottom: clamp(30px, 5vh, 50px);
-  width: clamp(300px, 40vw, 630px);
-  z-index: -1;
-  border-radius: 30px;
-  transition: var(--transition);
+  display: none; /* Removed as background is now in .hero */
 }
 
 /*-----------------------------------*\

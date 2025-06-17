@@ -29,10 +29,16 @@ for (let i = 0; i < navbarLinks.length; i++) {
  */
 
 const header = document.querySelector("[data-header]");
+const hero = document.querySelector(".hero");
 
 window.addEventListener("scroll", function () {
   window.scrollY >= 10 ? header.classList.add("active")
     : header.classList.remove("active");
+
+  if (hero && window.innerWidth >= 768) {
+    const scrollY = window.scrollY;
+    hero.style.backgroundPositionY = `${-scrollY * 0.15}px`;
+  }
 });
 
 document.querySelectorAll('.featured-car-card').forEach(card => {
